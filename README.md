@@ -45,18 +45,18 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 # Example commands to enable/authenticate IAM Role with eksctl to interact with cluster and view resources on AWS Console:
 ```
 eksctl create iamidentitymapping \
---cluster dev-wordpress-cluster-use1 \
+--cluster dev-wp-cluster-use1 \
 --region us-east-1 \
 --profile kmadmin \
 --arn arn:aws:iam::449321421705:user/kmadmin \
 --group system:masters \
 --username devops-admins
 ```
-* Within "**--profile nonprod**" this refers to locally configured aws cli profile to interact with correct AWS account. This name is subject to change depending on your local aws cli config profile.
+* Within "**--profile kmadmin**" this refers to locally configured aws cli profile to interact with correct AWS account. This name is subject to change depending on your local aws cli config profile.
 ## To retrieve identity mappings:
 ```
 eksctl get iamidentitymapping \
---cluster dev-wordpress-cluster-use1 \
+--cluster dev-wp-cluster-use1 \
 --region us-east-1 \
 --profile kmadmin
 ```
@@ -73,7 +73,7 @@ aws eks update-kubeconfig --region <region> --name <cluster-name> --profile <loc
 ```
 aws eks update-kubeconfig \
 --region=us-east-1 \
---name=dev-wordpress-cluster-use1 \
+--name=dev-wp-cluster-use1 \
 --profile=kmadmin
 ```
 
@@ -139,86 +139,46 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 # Directory Tree Structure
 
 ```
+│   .gitignore
+│   LICENSE
 │   README.md
-│
+│   
 ├───.attachments
-│       eks-project.png
-│       monkey.gif
-│
-├───dockerfiles
-│   │   telephony-api
-│   │
-│   └───assets
-│           amazon-cloudwatch-agent.json
-│
+│       space-cat.gif
+│       
 ├───infrastructure
+│       backend.tf
+│       cluster.tf
+│       global-vars.tf
+│       namespaces.tf
+│       provider.tf
+│       variables.tf
+│       
+├───modules
 │   ├───eks
 │   │       addons.tf
-│   │       backend.tf
 │   │       cluster.tf
 │   │       data.tf
-│   │       ecr.tf
-│   │       global-vars.tf
 │   │       iam.tf
 │   │       locals.tf
-│   │       namespace.tf
 │   │       oidc.tf
 │   │       output.tf
-│   │       provider.tf
-│   │       rbac.tf
 │   │       sg.tf
 │   │       variables.tf
+│   │       versions.tf
 │   │
-│   ├───external-dns-controller
-│   │       backend.tf
-│   │       data.tf
-│   │       external-dns.tf
-│   │       global-vars.tf
-│   │       iam.tf
-│   │       locals.tf
-│   │       oidc.tf
-│   │       provider.tf
-│   │       variables.tf
-│   │
-│   ├───ingress-controller
-│   │   │   backend.tf
-│   │   │   data.tf
-│   │   │   global-vars.tf
-│   │   │   iam.tf
-│   │   │   ingress-controller.tf
-│   │   │   locals.tf
-│   │   │   oidc.tf
-│   │   │   provider.tf
-│   │   │   variables.tf
-│   │   │
-│   │   └───policies
-│   │           AWSLoadBalancerController.json
-│   │
-│   └───kube-prometheus-stack
-│           backend.tf
-│           data.tf
-│           global-vars.tf
+│   └───global-vars
 │           locals.tf
-│           oidc.tf
-│           prometheus-stack.tf
-│           provider.tf
+│           outputs.tf
+│           readme.md
 │           variables.tf
 │
-└───pipelines
-    ├───docker
-    │       telephony-api-docker.yml
-    │
-    ├───helm
-    │       external-dns.yaml
-    │       ingress-controller.yaml
-    │       kube-prometheus-stack.yaml
-    │
-    ├───infrastructure
-    │       staging.yaml
-    │
-    └───templates
-            infrastructure-cd.yaml
-            infrastructure-destroy.yaml
+└───network
+        locals.tf
+        provider.tf
+        variables.tf
+        versions.tf
+        vpc.tf
 ```
 
 # Terraform Resources
