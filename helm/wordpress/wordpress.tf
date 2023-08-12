@@ -104,11 +104,6 @@ resource "helm_release" "wordpress" {
     value = "Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
-  set {
-    name  = "ingress.annotations.\\alb.ingress\\.kubernetes\\.io/listen-ports"
-    value = "443"
-  }
-
   # set_{
   #   name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/subnets"
   #   value = "${module.global-vars.subnet_id_map["public1"]}", "${module.global-vars.subnet_id_map["public2"]}"
