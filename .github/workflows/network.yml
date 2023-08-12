@@ -1,4 +1,4 @@
-name: Test and deploy infrastructure
+name: Test and deploy VPC
 on:
   push:
     branches:
