@@ -10,6 +10,4 @@ locals {
     owner             = "${var.owner}"
   }
 
-  listen_ports = "'[{"HTTP": 80}, {"HTTPS": 443}]'"
-
 }

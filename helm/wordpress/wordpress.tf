@@ -105,8 +105,8 @@ resource "helm_release" "wordpress" {
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/listen-ports"
-    value = "${local.listen_ports}"
+    name  = "ingress.annotations.\\alb.ingress\\.kubernetes\\.io/listen-ports"
+    value = "443"
   }
 
   # set_{
