@@ -20,11 +20,11 @@ data "aws_iam_policy_document" "external_dns_assume_role_policy" {
 
 resource "aws_iam_role" "external_dns_role" {
   assume_role_policy = data.aws_iam_policy_document.external_dns_assume_role_policy.json
-  name               = "${var.environment}-${var.app_name}-external-dns-${module.Global-Vars.location}"
+  name               = "${var.environment}-${var.app_name}-external-dns-${module.global-vars.location}"
 }
 
 resource "aws_iam_role_policy" "external_dns_role_policy" {
-  name = "${var.environment}-${var.app_name}-external-dns-policy-${module.Global-Vars.location}"
+  name = "${var.environment}-${var.app_name}-external-dns-policy-${module.global-vars.location}"
   role = aws_iam_role.external_dns_role.id
 
   policy = jsonencode({
