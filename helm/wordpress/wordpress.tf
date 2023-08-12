@@ -14,7 +14,7 @@ resource "helm_release" "wordpress" {
 
   set {
     name  = "service.type"
-    value = "ClusterIP"
+    value = "NodePort"
   }
 
   set {
@@ -39,7 +39,7 @@ resource "helm_release" "wordpress" {
 
   set {
     name  = "ingress.annotations"
-    value = "alb.ingress.kubernetes.io/scheme: external"
+    value = "alb.ingress.kubernetes.io/scheme: internet-facing"
   }
 
   # set {
