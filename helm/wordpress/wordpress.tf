@@ -34,7 +34,7 @@ resource "helm_release" "wordpress" {
 
   set {
     name  = "ingress.annotations"
-    value = "alb.ingress.kubernetes.io/certificate-arn ${module.global-vars.wildcard_certificate}"
+    value = "alb.ingress.kubernetes.io/certificate-arn: ${module.global-vars.wildcard_certificate}"
   }
 
   set {
