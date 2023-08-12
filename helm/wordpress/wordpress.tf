@@ -1,7 +1,7 @@
 // wordpress
 
 resource "helm_release" "wordpress" {
-  name = "external-dns"
+  name = "custom-wp"
 
   repository = "oci://registry-1.docker.io/bitnamicharts"
   chart      = "wordpress"
@@ -34,32 +34,32 @@ resource "helm_release" "wordpress" {
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/certificate-arn: ${module.global-vars.wildcard_certificate}"
+    value = "alb.ingress.kubernetes.io/certificate-arn: ${module.global-vars.wildcard_certificate}"
   }
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/load-balancer-name: ${var.environment}-${var.app_name}-external-alb-${module.global-vars.location}"
+    value = "alb.ingress.kubernetes.io/load-balancer-name: ${var.environment}-${var.app_name}-external-alb-${module.global-vars.location}"
   }
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/load-balancer-attributes: deletion_protection.enabled=false"
+    value = "alb.ingress.kubernetes.io/load-balancer-attributes: deletion_protection.enabled=false"
   }
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/ip-address-type: ipv4"
+    value = "alb.ingress.kubernetes.io/ip-address-type: ipv4"
   }
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/tags: Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
+    value = "alb.ingress.kubernetes.io/tags: Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
   set {
     name  = "ingress.annotations"
-    value = "alb\\.ingress\\.kubernetes\\.io/listen-ports: [{HTTPS: 443}]"
+    value = "alb.ingress.kubernetes.io/listen-ports: [{HTTPS: 443}]"
   }
 
   # set {
