@@ -12,7 +12,7 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 # Directory Guide
 * .attachments
   * Stores images and references for readme
-* .workflows
+* .github
     * Stores CI/CD pipeline configuration files in yaml format
 * Infrastructure
     * Stores Terraform configuration files
@@ -142,10 +142,14 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │   .gitignore
 │   LICENSE
 │   README.md
-│   
+│
 ├───.attachments
 │       space-cat.gif
-│       
+│
+├───.github
+│   └───workflows
+│           network.yml
+│
 ├───infrastructure
 │       backend.tf
 │       cluster.tf
@@ -153,7 +157,7 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │       namespaces.tf
 │       provider.tf
 │       variables.tf
-│       
+│
 ├───modules
 │   ├───eks
 │   │       addons.tf
