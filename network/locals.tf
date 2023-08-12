@@ -29,13 +29,13 @@ locals {
   public01_tags = {
     Name = "public0-subnet-${local.region_short}"
     Tier = "public"
-    kubernetes.io/role/elb = "1"
+    "kubernetes.io/role/elb" = "1"
   }
 
   public02_tags = {
     Name = "public1-subnet-${local.region_short}"
     Tier = "public"
-    kubernetes.io/role/elb = "1"
+    "kubernetes.io/role/elb" = "1"
   }
 
   private01_tags = {
