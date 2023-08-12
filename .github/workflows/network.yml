@@ -37,7 +37,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}"
+        run: terraform plan -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -var "owner=${{ vars.owner }}"
         continue-on-error: true
 
       - uses: actions/github-script@v6
@@ -95,7 +95,7 @@ jobs:
 
       - name: Terraform Apply
         id: apply
-        run: terraform apply -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -auto-approve
+        run: terraform apply -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -var "owner=${{ vars.owner }}" -auto-approve
 
   Destroy-test:
     if: success() && github.ref != 'refs/heads/main'
@@ -115,7 +115,7 @@ jobs:
 
       - name: Terraform Destroy
         id: destroy
-        run: terraform destroy -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -auto-approve                 
+        run: terraform destroy -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -var "owner=${{ vars.owner }}" -auto-approve                 
 
   Deploy-dev:
     if: always() && github.ref == 'refs/heads/main'
@@ -134,7 +134,7 @@ jobs:
 
       - name: Terraform Apply
         id: apply
-        run: terraform apply -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -auto-approve
+        run: terraform apply -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -var "owner=${{ vars.owner }}" -auto-approve
 
   Destroy-dev:
     if: success() && github.ref == 'refs/heads/main'
@@ -154,4 +154,4 @@ jobs:
 
       - name: Terraform Destroy
         id: destroy
-        run: terraform destroy -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -auto-approve
+        run: terraform destroy -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var "AWS_REGION=${{ vars.AWS_REGION }}" -var "app_name=${{ vars.APP_NAME }}" -var "environment=${{ vars.ENVIRONMENT }}" -var "owner=${{ vars.owner }}" -auto-approve
