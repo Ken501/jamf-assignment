@@ -38,8 +38,7 @@ The pipeline configuration runs a test pipeline that only triggers with branches
   * **NOTE**: for the above to work a **local AWS cli profile is needed.** For more info on how to configure local aws profile see **Additional documentation** further below for instructions.
 
 # Naming convention
-* AWS kubernetes associated resources will be named:
-  * <env>-<app_name>-<aws-resource>-<region>
+* AWS kubernetes associated resources will be named: **<env>-<app_name>-<aws-resource>-<region>**
   * Example: **test-k8s-cluster-use1**
 
 # AWS IAM and Cluster Auth Instructions:
