@@ -156,6 +156,18 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │           network.yaml
 │           output.yaml
 │
+├───helm
+│   └───external-dns-controller
+│           backend.tf
+│           data.tf
+│           external-dns.tf
+│           global-vars.tf
+│           iam.tf
+│           locals.tf
+│           oidc.tf
+│           provider.tf
+│           variables.tf
+│
 ├───infrastructure
 │       backend.tf
 │       cluster.tf
