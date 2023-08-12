@@ -104,10 +104,10 @@ resource "helm_release" "wordpress" {
     value = "Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
-  # set {
-  #   name  = "ingress.annotations"
-  #   value = "alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'"
-  # }
+  set {
+    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/listen-ports"
+    value = "${local.listen_ports}"
+  }
 
   # set_{
   #   name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/subnets"
