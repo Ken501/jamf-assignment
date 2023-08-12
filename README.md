@@ -157,21 +157,48 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │
 ├───.github
 │   └───workflows
+│           extdns.yml
 │           infrastructure.yml
+│           ingress-controller.yml
 │           network.yaml
 │           output.yaml
+│           wordpress.yml
 │
 ├───helm
-│   └───external-dns-controller
+│   ├───external-dns-controller
+│   │       backend.tf
+│   │       data.tf
+│   │       external-dns.tf
+│   │       global-vars.tf
+│   │       iam.tf
+│   │       locals.tf
+│   │       oidc.tf
+│   │       provider.tf
+│   │       variables.tf
+│   │
+│   ├───ingress-controller
+│   │   │   backend.tf
+│   │   │   data.tf
+│   │   │   global-vars.tf
+│   │   │   iam.tf
+│   │   │   ingress-controller.tf
+│   │   │   locals.tf
+│   │   │   oidc.tf
+│   │   │   provider.tf
+│   │   │   variables.tf
+│   │   │
+│   │   └───policies
+│   │           AWSLoadBalancerController.json
+│   │
+│   └───wordpress
 │           backend.tf
 │           data.tf
-│           external-dns.tf
 │           global-vars.tf
-│           iam.tf
 │           locals.tf
 │           oidc.tf
 │           provider.tf
 │           variables.tf
+│           wordpress.tf
 │
 ├───infrastructure
 │       backend.tf
