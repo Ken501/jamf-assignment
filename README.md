@@ -19,6 +19,8 @@ The pipeline configuration runs a test pipeline that only triggers with branches
   * Stores images and references for readme
 * .github
     * Stores CI/CD pipeline configuration files in yaml format
+* helm
+    * Stores Helm Charts deployments in Terraform configuration
 * Infrastructure
     * Stores Terraform configuration files
 * modules
