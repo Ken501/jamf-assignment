@@ -57,10 +57,10 @@ resource "helm_release" "wordpress" {
     value = "alb.ingress.kubernetes.io/tags: Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
-  set {
-    name  = "ingress.annotations"
-    value = "alb.ingress.kubernetes.io/listen-ports: [{HTTPS: 443}]"
-  }
+  # set {
+  #   name  = "ingress.annotations"
+  #   value = "alb.ingress.kubernetes.io/listen-ports: [{HTTPS: 443}]"
+  # }
 
   # set {
   #   name  = "ingress.annotations"
