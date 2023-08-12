@@ -8,6 +8,10 @@ Repository for jamf aws elastic kubernetes service project. Infrastructure terra
 # CI/CD
 The pipeline configuration runs a test pipeline that only triggers with branches that are not equal to main and a development branch that triggers when a merge occurs.
 
+# Badges
+* [![Test and deploy infrastructure](https://github.com/Ken501/jamf-assignment/actions/workflows/infrastructure.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/infrastructure.yml)
+* [![Test and deploy VPC](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml)
+
 <!-- Dir Summary -->
 # Directory Guide
 * .attachments
@@ -148,7 +152,9 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │
 ├───.github
 │   └───workflows
-│           network.yml
+│           infrastructure.yml
+│           network.yaml
+│           output.yaml
 │
 ├───infrastructure
 │       backend.tf
@@ -178,6 +184,7 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │           variables.tf
 │
 └───network
+        backend.tf
         locals.tf
         provider.tf
         variables.tf
