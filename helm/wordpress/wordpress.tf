@@ -57,9 +57,9 @@ resource "helm_release" "wordpress" {
     value = "Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
-  set_list {
+  set {
     name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/listen-ports"
-    value = [{"HTTPS": 443}]
+    value = '[{"HTTPS": 443}]'
   }
 
   set_list {
