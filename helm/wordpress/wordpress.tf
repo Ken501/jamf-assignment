@@ -62,9 +62,9 @@ resource "helm_release" "wordpress" {
     value = "alb.ingress.kubernetes.io/listen-ports: [{HTTPS: 443}]"
   }
 
-  set {
-    name  = "ingress.annotations"
-    value = "alb.ingress.kubernetes.io/subnets: ${module.global-vars.subnet_id_map["public1"]}, ${module.global-vars.subnet_id_map["public2"]}"
-  }
+  # set {
+  #   name  = "ingress.annotations"
+  #   value = "alb.ingress.kubernetes.io/subnets: ${module.global-vars.subnet_id_map["public1"]}, ${module.global-vars.subnet_id_map["public2"]}"
+  # }
 
 }
