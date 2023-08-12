@@ -33,37 +33,37 @@ resource "helm_release" "wordpress" {
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/certificate-arn"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/certificate-arn"
     value = "${module.global-vars.wildcard_certificate}"
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/load-balancer-name"
-    value = "${var.environment}-${var.app_name}-external-alb-${module.global-vars.location}"
+    name  = "ingress.annotations"
+    value = "alb.ingress.kubernetes.io/load-balancer-name: ${var.environment}-${var.app_name}-external-alb-${module.global-vars.location}"
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/load-balancer-attributes"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/load-balancer-attributes"
     value = "deletion_protection.enabled=false"
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/ip-address-type"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/ip-address-type"
     value = "ipv4"
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/tags"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/tags"
     value = "Environment=${var.environment},Owner=${var.owner},App=${var.app_name}"
   }
 
   set {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/listen-ports"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/listen-ports"
     value = "[{HTTPS: 443}]"
   }
 
   set_list {
-    name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/subnets"
+    name  = "ingress.annotations\\.alb\\.ingress\\.kubernetes\\.io/subnets"
     value = ["${module.global-vars.subnet_id_map["public1"]}", "${module.global-vars.subnet_id_map["public2"]}"]
   }
 
