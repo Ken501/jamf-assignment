@@ -111,7 +111,7 @@ resource "helm_release" "wordpress" {
 
   set {
     name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/subnets"
-    value = "${module.global-vars.subnet_id_map["public1"]}", "${module.global-vars.subnet_id_map["public2"]}"
+    value = "${module.global-vars.subnet_id_map["public1"]}","${module.global-vars.subnet_id_map["public2"]}"
   }
 
 }
