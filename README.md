@@ -11,6 +11,7 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 # Badges
 * [![Test and deploy infrastructure](https://github.com/Ken501/jamf-assignment/actions/workflows/infrastructure.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/infrastructure.yml)
 * [![Test and deploy VPC](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml)
+* [![Test and deploy external dns controller](https://github.com/Ken501/jamf-assignment/actions/workflows/extdns.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/extdns.yml)
 
 <!-- Dir Summary -->
 # Directory Guide
