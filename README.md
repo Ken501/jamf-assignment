@@ -13,6 +13,7 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 * [![Test and deploy VPC](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/network.yaml)
 * [![Test and deploy external dns controller](https://github.com/Ken501/jamf-assignment/actions/workflows/extdns.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/extdns.yml)
 * [![Test and deploy AWS Ingress controller](https://github.com/Ken501/jamf-assignment/actions/workflows/ingress-controller.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/ingress-controller.yml)
+* [![Test and deploy wordpress](https://github.com/Ken501/jamf-assignment/actions/workflows/wordpress.yml/badge.svg)](https://github.com/Ken501/jamf-assignment/actions/workflows/wordpress.yml)
 
 <!-- Dir Summary -->
 # Directory Guide
