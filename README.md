@@ -30,6 +30,13 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 * network
     * Stores custom AWS VPC
 
+<details>
+<summary><b>Expand to see..</b></summary>
+* Wordpress Deployment
+![wordpress Deployment](/.attachments/wordpress.kmartinez.net.PNG)
+
+</details>
+
 # Before Proceeding make sure to install the following:
 * Install **latest** version of AWS eksctl
   * Instructions: https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
@@ -151,7 +158,7 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │   .gitignore
 │   LICENSE
 │   README.md
-│
+│   
 ├───.attachments
 │       space-cat.gif
 │
@@ -239,3 +246,5 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 # Terraform Resources
 * EKS
 * ALB
+* R53 Records
+* AWS VPC
