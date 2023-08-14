@@ -31,9 +31,14 @@ The pipeline configuration runs a test pipeline that only triggers with branches
     * Stores custom AWS VPC
 
 # Deployment Screenshots
-## Wordpress Deployment
+
 * Wordpress Deployment
 ![wordpress Deployment](/.attachments/wordpress.kmartinez.net.PNG)
+
+<br />
+
+* EKS Overview
+![EKS Overview](/.attachments/eks-overview.PNG)
 
 </details>
 
