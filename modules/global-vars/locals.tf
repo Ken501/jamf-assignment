@@ -8,8 +8,8 @@ locals {
 
   vpc_id_map = {
     us-east-1 = {
-      "test" = "vpc-05fce31a38b22925f" # Allows allocation of multiple VPC IDs for multiple environments
-      "dev"  = "vpc-05fce31a38b22925f"
+      "test" = "vpc-0f778d6cbdd6e35c5" # Allows allocation of multiple VPC IDs for multiple environments
+      "dev"  = "vpc-0f778d6cbdd6e35c5"
     }
   }
   vpc_id = "${local.vpc_id_map[var.AWS_REGION]}"
