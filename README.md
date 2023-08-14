@@ -30,8 +30,8 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 * network
     * Stores custom AWS VPC
 
-<details>
-<summary><b>Expand to see..</b></summary>
+# Deployment Screenshots
+## Wordpress Deployment
 * Wordpress Deployment
 ![wordpress Deployment](/.attachments/wordpress.kmartinez.net.PNG)
 
