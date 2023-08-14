@@ -203,9 +203,19 @@ kubectl expose <api-resource> --name=http-svc --port=80 --type=NodePort
 │   .gitignore
 │   LICENSE
 │   README.md
-│   
+│
 ├───.attachments
+│       eks-addons.PNG
+│       eks-compute.PNG
+│       eks-logging.PNG
+│       eks-networking.PNG
+│       eks-overview.PNG
+│       eks-resources01.PNG
+│       eks-resources02.PNG
+│       eks-tags.PNG
+│       r53-records.PNG
 │       space-cat.gif
+│       wordpress.kmartinez.net.PNG
 │
 ├───.github
 │   └───workflows
