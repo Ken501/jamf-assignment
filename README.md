@@ -32,13 +32,53 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 
 # Deployment Screenshots
 
-* **Wordpress Deployment:** <br />
+* **Wordpress Deployment:**
 ![wordpress Deployment](/.attachments/wordpress.kmartinez.net.PNG)
 
 <br />
 
-* **EKS Overview:** <br />
+* **EKS Overview:**
 ![EKS Overview](/.attachments/eks-overview.PNG)
+
+<br />
+
+* **EKS Resources Page 1:**
+![EKS Resources 1](/.attachments/eks-resources01.PNG)
+
+<br />
+
+* **EKS Resources Page 2:**
+![EKS Resources 2](/.attachments/eks-resources02.PNG)
+
+<br />
+
+* **EKS Compute:**
+![EKS Compute](/.attachments/eks-compute.PNG)
+
+<br />
+
+* **EKS Networking:**
+![EKS Networking](/.attachments/eks-networking.PNG)
+
+<br />
+
+* **EKS Addons:**
+![EKS Addons](/.attachments/eks-addons.PNG)
+
+<br />
+
+* **EKS Logging:**
+![EKS Logging](/.attachments/eks-logging.PNG)
+
+<br />
+
+* **EKS Tags:**
+![EKS Tags](/.attachments/eks-tags.PNG)
+
+<br />
+
+* **Route 53:**
+![Route 53 Records](/.attachments/r53-records.PNG)
 
 </details>
 
