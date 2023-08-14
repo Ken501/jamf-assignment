@@ -32,12 +32,12 @@ The pipeline configuration runs a test pipeline that only triggers with branches
 
 # Deployment Screenshots
 
-* Wordpress Deployment
+* **Wordpress Deployment:** <br />
 ![wordpress Deployment](/.attachments/wordpress.kmartinez.net.PNG)
 
 <br />
 
-* EKS Overview
+* **EKS Overview:** <br />
 ![EKS Overview](/.attachments/eks-overview.PNG)
 
 </details>
